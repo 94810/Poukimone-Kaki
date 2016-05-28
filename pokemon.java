@@ -64,7 +64,7 @@ public class poukimone{
     	if (exp_curve==3){
     		next_level_exp=63;//voir "Bug de l'expérience" sur Pokémon G1 et 2
     		else
-    		nexet_level_exp=calc_exp();
+    		next_level_exp=calc_exp();
     	}
     	max_hp=get_base(name, "hp");
     	hp=get_base(name,"hp");
