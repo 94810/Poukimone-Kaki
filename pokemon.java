@@ -1,4 +1,4 @@
-public class ability{
+public class Ability{
 	public String name;
 	public int max_pp;//pareil pour les pp
 	public int power;
@@ -7,14 +7,14 @@ public class ability{
 	}
 }
 
-public class poukimone_ability extends ability{
+public class Poukimone_ability extends ability{
 	public int pp;
 	poukimone_ability(){
 		pp=super.max_pp;
 	}
 }
 
-public class poukimone{
+public class Poukimone {
     public String name;
     public int hp;
     public int max_hp;// Besoin de le garder car il ya des objets de soin!
@@ -25,7 +25,8 @@ public class poukimone{
     public int next_level_exp;
     public int exp_value; //Combien il rapporte en exp quand il est vaincu. faudrait peut-être envoyer un mail a Anu pour avoir des précisions sur comment la gérer?
     public int exp;
-    public int exp_curve; //1 rapide,2 moyenne, 3 parabolique, 4 lente.
+    public int exp_curve;//1 rapide,2 moyenne, 3 parabolique, 4 lente.
+    public Poukimone_ability[] abilites;
     /* Methodes*/
     int level_up(){
     	lvl++;
@@ -73,6 +74,36 @@ public class poukimone{
     	spd=get_base(name, "spd");
     	exp_value=get_base(name,"value");
     }
+    public take_damage (int foe_power, int foe_att){
+    	int dmg=0;
+    	dmg=((((lvl*0.4)+2)*foe_att*foe_power)/(def*50))+2;
+    	if (dmg > 0){// pas sûr que ça soit très utile...
+    		hp=hp-dmg;
+    		if (hp < 1){
+    			is_dead();
+    		}
+    	}
+    }
+    public use_ability(Poukimone_ability attack){
+ 
+    }
 }
+public class Bag{
+	
+}
+
+public class Trainer{
+	public String name;
+	public Poukimone[] team;
+	public Bag inventaire;
+}
+
+public class Fight{
+	public Trainer[] trainers;
+	public Poukimone[] fighters;
+}
+
+
+
 
 
