@@ -1,13 +1,13 @@
 public class Ability{
 	public String name;
-	public int max_pp;//pareil pour les pp
-	public int power;
+	private int max_pp;//pareil pour les pp
+	private int power;
 	
 	ability(String name, int max_pp, int power){
 	}
 }
 
-public class Poukimone_ability extends ability{
+public class Poukimone_ability extends ability{ /* Pourquoi ? crée une classe hérité ?*/ 
 	public int pp;
 	poukimone_ability(){
 		pp=super.max_pp;
@@ -28,7 +28,7 @@ public class Poukimone {
     public int exp_curve;//1 rapide,2 moyenne, 3 parabolique, 4 lente.
     public Poukimone_ability[] abilites;
     /* Methodes*/
-    int level_up(){
+    int level_up(){ //Du coup on prend pas les EV et IV ?
     	lvl++;
     	max_hp=get_base(name, "hp")*(1/50)+max_hp;
     	hp=get_base(name,"hp")*(1/50)+hp;
@@ -88,14 +88,41 @@ public class Poukimone {
  
     }
 }
+
+private class Item{
+	private String name;
+	public int mult;
+}
+
 public class Bag{
+	private Item inside[20]; //A list might be better [itemType][multipliciter]
 	
+	public steal(){
+		//Try to take a random item in the bag
+	}
+	
+	public list(){
+		//List item in bag
+	}
+	
+	public remove(String name, int mult){
+		//Remove 1 of string
+	}
+	
+	public add(String name, int mult){
+		//Add of string  
+	}
 }
 
 public class Trainer{
-	public String name;
-	public Poukimone[] team;
+	private String name;
+	private Poukimone[6] team;
 	public Bag inventaire;
+	
+	public Trainer (String n, Poukimone starter){ //On a forcement 1 pkm et 1nm
+		name=n;
+		team[1]=starter;
+	}
 }
 
 public class Fight{
