@@ -56,7 +56,38 @@ enum Type{NORMAL,FEU,EAU,ELECTRIQUE,PLANTE,VOL,COMBAT,SOL,ROCHE,POISON,INSECTE,S
                     case DRAGON:
                         return 0.5f;
                     break;
+                    case SOL:
+                        return 0.0f;
+                    break;
                 }
+            }break;
+            // TYPE PLANTE
+            case PLANTE: {
+                switch (def) {
+                    case EAU:
+                    case SOL:
+                    case ROCHE:
+                        return 2.0f;
+                    break;
+                    case FEU:
+                    case PLANTE:
+                    case POISON:
+                    case DRAGON:
+                    case VOL:
+                    case INSECTE:
+                        retrun 0.5f;
+                        break;
+                }
+            }break;
+
+            case
+
+
+
+                }
+
+
+
             }
 
         }
