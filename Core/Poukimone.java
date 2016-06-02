@@ -2,20 +2,38 @@
 				==TODO==
 
 */
+package com.mkyong.json;
+
+import java.io.File;
+import java.io.IOException;
+
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class Stats{
+	public int att;
+	public int def;
+	public int spd;
+	public int lvl;
+	public int xp;
+	public int hp;
+}
+
+
 public class Poukimone {
     public String name;
-    public int hp;
-	public // Type enum
-    public int max_hp;// Besoin de le garder car il ya des objets de soin!
-    public int att;
-    public int def;
-    public int spd;
-    public int lvl;
+	public String type;
+
+	public Stats base;
+	public Stats current;
+
     public int next_level_exp;
-    public int exp_value; //Combien il rapporte en exp quand il est vaincu. faudrait peut-être envoyer un mail a Anu pour avoir des précisions sur comment la gérer?
-    private int exp;
-    private int exp_curve;//1 rapide,2 moyenne, 3 parabolique, 4 lente.
+    private int exp_curve;
+
     public Ability[] abilites;
+
 
 	/* Methodes*/
     private void level_up(){
@@ -68,7 +86,7 @@ public class Poukimone {
     public void take_damage (int foe_power, int foe_att){
     	int dmg=0;
     	dmg=(int)((((lvl*0.4)+2)*foe_att*foe_power)/(def*50))+2;
-    	if (dmg > 0) {// pas sûr que ça soit très utile...
+    	if (dmg > 0) {
 			hp = hp - dmg;
 			if (hp < 1) {
 				kill();
@@ -81,9 +99,26 @@ public class Poukimone {
 			exp++;
     }
 
-	private int get_base(String name, String field){
-		int fake_var=12;
-		return fake_var;
+	private void get_base(String name, String field){
+		ObjectMapper mapper = new OjectMapper();
+
+		JsonNode rootArr = mapper.readTree(new File("./poukimone.json"));
+
+		boolean trig=false;
+
+		for(JsonNode root : rootArr) {
+			if(name.equals(root.path("name").asText())){
+				trig=true;
+				base.att = root.path("att").asInt();
+				base.def = root.path("def").asInt();
+				base.spd = root.path("spd").asInt();
+				base.lvl = 1;
+				base.xp = root.path("exp").asInt();
+				type = root.path("type").asInt();
+			}
+
+		}
+
 	}
 
 	private void kill(){
