@@ -169,16 +169,59 @@ enum Type{NORMAL,FEU,EAU,ELECTRIQUE,PLANTE,VOL,COMBAT,SOL,ROCHE,POISON,INSECTE,S
                     case VOL:
                         return 0.5f;
                     break;
-                    }
-                }break;
+                }
+            }break;
             //TYPE SPECTRE "SPOOLY SCARY SKELETONS"
-            }
+            case SPECTRE:{
+                switch(def){
+                    case SPECTRE:
+                        return 2.0f;
+                    break;
+                    case NORMAL:
+                    case PSY:
+                        return 0.0f;
+                    break;
+                }
+            }break;
+            // TYPE PSY "WHERE IS MY MIND..."
+            case PSY:{
+                switch (def){
+                    case COMBAT:
+                    case POISON:
+                        return 2.0f;
+                    break;
+                    case PSY:
+                        return 0.5f;
+                    break;
+                }
+            }break;
+            //TYPE DRAGON "THROUGH THE FIRE AND FLAMES, WE CARY OOOOOOOON!!!!!"
+            case DRAGON:{
+                switch (def){
+                    case DRAGON:
+                        return 2.0f;
+                    break;
+                }
+            }break;
+            //TYPE GLACE "LIBEREEEEE DELIVREEEEE, JE NE MENTIRAIS PLUS JAMAIS!!!
+            case GLACE:{
+                switch (def){
+                    case SOL:
+                    case VOL:
+                    case PLANTE:
+                    case DRAGON:
+                        return 2.0f;
+                    break;
+                    case FEU:
+                    case EAU:
+                    case GLACE:
+                        return 0.5f;
+                    break;
+                }
+            }break;
         }
-
-
-
-
+        return 1.0f;
     }
-
-
 }
+
+
