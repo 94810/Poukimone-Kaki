@@ -111,6 +111,68 @@ enum Type{NORMAL,FEU,EAU,ELECTRIQUE,PLANTE,VOL,COMBAT,SOL,ROCHE,POISON,INSECTE,S
                 }
             }break;
             //TYPE SOL "LA TERRE EST BASSE"
+            case SOL:{
+                switch (def) {
+                    case ELECTRIQUE:
+                    case POISON:
+                    case FEU:
+                    case ROCHE:
+                        return 2.0f;
+                    break;
+                    case INSECTE:
+                    case PLANTE:
+                        return 0.5f;
+                    break;
+                }
+            }break;
+            //TYPE ROCHE "PIERRE QUI ROULE N'AMASSE PAS MOUSSE"
+            case ROCHE:{
+                switch (def) {
+                    case FEU:
+                    case VOL:
+                    case GLACE:
+                    case INSECTE:
+                        return 2.0f;
+                    break;
+                    case SOL:
+                    case COMBAT:
+                        return 0.5f;
+                    break;
+                }
+            }break;
+            // TYPE POISON "WITH THE TASTE OF YOUR LIPS, I'M FALLING DOWN... YOU'RE TOXIC, I'M FALLING UNDER"
+            case POISON:{
+                switch (def) {
+                    case PLANTE:
+                    case INSECTE:
+                        return 2.0f;
+                    break;
+                    case POISON:
+                    case ROCHE:
+                    case SOL:
+                    case SPECTRE:
+                        return 0.5f;
+                    break;
+                }
+            }break;
+            //TYPE INSECTE "SALUT C'EST MOI COXI, JSUIS UNE COXI, PAS UN FOURMI"
+            case INSECTE:{
+                switch (def){
+                    case PLANTE:
+                    case POISON:
+                    case PSY:
+                        return 2.0f;
+                    break;
+                    case COMBAT:
+                    case FEU:
+                    case SPECTRE:
+                    case VOL:
+                        return 0.5f;
+                    break;
+                    }
+                }break;
+            //TYPE SPECTRE "SPOOLY SCARY SKELETONS"
+            }
         }
 
 
