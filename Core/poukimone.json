@@ -11,11 +11,19 @@
 
   },
   {
-    "name"  : "pikachu",
-    "att"   : "55",
-    "def"   : "30",
-    "spd"   : "90",
-    "exp"   : "82",
-    "type"  : "ELECTRIQUE"
+    "name": "pikachu",
+    "att": "55",
+    "def": "30",
+    "spd": "90",
+    "exp": "82",
+    "type": "ELECTRIQUE"
+  },
+  {
+    "name": "filsdepute",
+    "att": "00",
+    "def": "5555555",
+    "spd": "0",
+    "exp": "42",
+    "type": "POISON"
   }
 ]
