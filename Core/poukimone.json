@@ -1,0 +1,21 @@
+[
+  {
+    "name"  : "pikachu",
+    "att"   : "55",
+    "def"   : "30",
+    "spd"   : "90",
+    "exp"   : "82",
+    "type"  : "ELECTRIQUE"
+  },
+  {
+
+  },
+  {
+    "name"  : "pikachu",
+    "att"   : "55",
+    "def"   : "30",
+    "spd"   : "90",
+    "exp"   : "82",
+    "type"  : "ELECTRIQUE"
+  }
+]
