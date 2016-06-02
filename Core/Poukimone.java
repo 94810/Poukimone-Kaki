@@ -109,14 +109,13 @@ public class Poukimone {
 		for(JsonNode root : rootArr) {
 			if(name.equals(root.path("name").asText())){
 				trig=true;
+				base.lvl = 1;
 				base.att = root.path("att").asInt();
 				base.def = root.path("def").asInt();
 				base.spd = root.path("spd").asInt();
-				base.lvl = 1;
 				base.xp = root.path("exp").asInt();
 				type = root.path("type").asInt();
 			}
-
 		}
 
 	}
