@@ -83,9 +83,9 @@ public class Poukimone {
     	spd=get_base(name, "spd");
     	exp_value=get_base(name,"value");
     }
-    public void take_damage (int foe_power, int foe_att){
+    public void take_damage (int foe_power, int foe_att, Type ow_type, Type boum_type){
     	int dmg=0;
-    	dmg=(int)((((lvl*0.4)+2)*foe_att*foe_power)/(def*50))+2;
+    	dmg=(int)(((((lvl*0.4)+2)*foe_att*foe_power)/(def*50))+2)*Type.compare(boum_type,ow_type);
     	if (dmg > 0) {
 			hp = hp - dmg;
 			if (hp < 1) {
