@@ -2,7 +2,7 @@ enum Type{NORMAL,FEU,EAU,ELECTRIQUE,PLANTE,VOL,COMBAT,SOL,ROCHE,POISON,INSECTE,S
 
     public float compare(Type att, Type def){
         switch (att){
-            //TYPE NORMAL
+            //TYPE NORMAL "MMMH..... JUST AVERAGE"
             case NORMAL:{
                 switch (def){
                     case ROCHE:{
@@ -13,7 +13,7 @@ enum Type{NORMAL,FEU,EAU,ELECTRIQUE,PLANTE,VOL,COMBAT,SOL,ROCHE,POISON,INSECTE,S
                     }break;
                 }
             }break;
-            //TYPE FEU
+            //TYPE FEU "THIS POKEMON IS ON FIIIIIIIIIRE!!"
             case FEU:{
                 switch (def){
                     case PLANTE:
@@ -29,7 +29,7 @@ enum Type{NORMAL,FEU,EAU,ELECTRIQUE,PLANTE,VOL,COMBAT,SOL,ROCHE,POISON,INSECTE,S
                     break;
                 }
             }break;
-            //TYPE EAU
+            //TYPE EAU "REALESE THE KRAKEN!!"
             case EAU:{
                 switch (def){
                     case FEU:
@@ -44,7 +44,7 @@ enum Type{NORMAL,FEU,EAU,ELECTRIQUE,PLANTE,VOL,COMBAT,SOL,ROCHE,POISON,INSECTE,S
                     break;
                 }
             }break;
-            //TYPE ELECTRIQUE
+            //TYPE ELECTRIQUE "BZZZZT"
             case ELECTRIQUE:{
                 switch (def){
                     case EAU:
@@ -61,7 +61,7 @@ enum Type{NORMAL,FEU,EAU,ELECTRIQUE,PLANTE,VOL,COMBAT,SOL,ROCHE,POISON,INSECTE,S
                     break;
                 }
             }break;
-            // TYPE PLANTE
+            // TYPE PLANTE "ESPECE D'ENCULEUR D'ARBRES"
             case PLANTE: {
                 switch (def) {
                     case EAU:
@@ -79,7 +79,7 @@ enum Type{NORMAL,FEU,EAU,ELECTRIQUE,PLANTE,VOL,COMBAT,SOL,ROCHE,POISON,INSECTE,S
                     break;
                 }
             }break;
-            //TYPE VOL
+            //TYPE VOL "J'AIMERAI MIEUX ETRE UN OISEAU!!!"
             case VOL:{
                 switch(def){
                     case PLANTE:
@@ -94,7 +94,7 @@ enum Type{NORMAL,FEU,EAU,ELECTRIQUE,PLANTE,VOL,COMBAT,SOL,ROCHE,POISON,INSECTE,S
 
                 }
             }break;
-            //TYPE COMBAT
+            //TYPE COMBAT "THE EYE OF THE TIGER!!"
             case COMBAT:{
                 switch (def){
                     case NORMAL:
@@ -110,7 +110,7 @@ enum Type{NORMAL,FEU,EAU,ELECTRIQUE,PLANTE,VOL,COMBAT,SOL,ROCHE,POISON,INSECTE,S
                     break;
                 }
             }break;
-            //TYPE SOL
+            //TYPE SOL "LA TERRE EST BASSE"
         }
 
 
