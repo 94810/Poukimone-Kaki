@@ -1,25 +1,37 @@
-
 public class Bag{
     private int popo;
     private int oil;
 
-    public steal(){
-        //Try to take a random item in the bag
+    public int list(){
+        System.out.print("You got "+popo+" Potions");
+        System.out.print("You got "+oil+" Oil");
     }
 
-    public list(){
-        //List item in bag
+    public boolean useHeal(){
+       if(popo>0) {
+           popo--;
+           return true;
+       }else
+           return false;
     }
 
-    public useHeal(){
-        //use 1 popo
+    public int useMana(){
+        if(oil>0){
+            oil--;
+            return true;
+        }else
+            return false;
     }
 
-    public useBuff(){
-        //use 1 oil
-    }
+    public boolean addItem(String str) {
+        boolean res=true
 
-    public addItem(String str) {
-        //add 1 popo to the count
+        if("Mana".equals(str))
+            oil++;
+        else if("Popo".equals(str))
+            popo++;
+        else
+            res=false;
+        return res;
     }
 }

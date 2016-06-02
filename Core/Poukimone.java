@@ -1,15 +1,16 @@
 /*
-	==TODO==
+				==TODO==
 
 */
 public class Poukimone {
     public String name;
     public int hp;
+	public // Type enum
     public int max_hp;// Besoin de le garder car il ya des objets de soin!
     public int att;
     public int def;
     public int spd;
-    public int lvl;// j'étais pas sur si il fallait mettre ça la, mais si il a des stats definies, forcément le level est déja instancié
+    public int lvl;
     public int next_level_exp;
     public int exp_value; //Combien il rapporte en exp quand il est vaincu. faudrait peut-être envoyer un mail a Anu pour avoir des précisions sur comment la gérer?
     private int exp;
@@ -72,18 +73,27 @@ public class Poukimone {
 			if (hp < 1) {
 				kill();
 			}
-		}
+		}else
+			System.out.print("Miss !");
     }
+
     public void use_ability (Ability attack){
 			exp++;
     }
 
-	private int get_base(String name, String  field){
+	private int get_base(String name, String field){
 		int fake_var=12;
 		return fake_var;
 	}
 
 	private void kill(){
 
+	}
+
+	public boolean is_dead(){
+		if(hp==0)
+			return true;
+		else
+			return false;
 	}
 }
