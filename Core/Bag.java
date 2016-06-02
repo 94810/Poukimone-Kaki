@@ -2,7 +2,7 @@ public class Bag{
     private int popo;
     private int oil;
 
-    public int list(){
+    public void list(){
         System.out.print("You got "+popo+" Potions");
         System.out.print("You got "+oil+" Oil");
     }
@@ -15,7 +15,7 @@ public class Bag{
            return false;
     }
 
-    public int useMana(){
+    public boolean useMana(){
         if(oil>0){
             oil--;
             return true;
@@ -24,7 +24,7 @@ public class Bag{
     }
 
     public boolean addItem(String str) {
-        boolean res=true
+        boolean res=true;
 
         if("Mana".equals(str))
             oil++;

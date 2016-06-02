@@ -1,26 +1,6 @@
 /*
 				==TODO==
-
 */
-package com.mkyong.json;
-
-import java.io.File;
-import java.io.IOException;
-
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-public class Stats{
-	public int att;
-	public int def;
-	public int spd;
-	public int lvl;
-	public int xp;
-	public int hp;
-}
-
 
 public class Poukimone {
     public String name;
@@ -37,14 +17,14 @@ public class Poukimone {
 
 	/* Methodes*/
     private void level_up(){
-    	lvl++;
-    	max_hp=get_base(name, "hp")*(1/50)+max_hp;
-    	hp=get_base(name,"hp")*(1/50)+hp;
+    	/*current.lvl++;
+    	current.max_hp=get_base(name, "hp")*(1/50)+max_hp;
+    	current.hp=get_base(name,"hp")*(1/50)+hp;
     	att=get_base(name, "att")*(1/50)+att;
     	def=get_base(name, "def")*(1/50)+def;
     	spd=get_base(name, "spd")*(1/50)+spd;
     	exp=0;
-    	next_level_exp=calc_exp();
+    	next_level_exp=calc_exp();*/
     }
 
     public int calc_exp(){
@@ -76,12 +56,8 @@ public class Poukimone {
 		}else{
     		next_level_exp=calc_exp();
     	}
-    	max_hp=get_base(name, "hp");
-    	hp=get_base(name,"hp");
-    	att=get_base(name, "att");
-    	def=get_base(name, "def");
-    	spd=get_base(name, "spd");
-    	exp_value=get_base(name,"value");
+
+		get_base(spices);
     }
     public void take_damage (int foe_power, int foe_att, Type ow_type, Type boum_type){
     	int dmg=0;
@@ -96,10 +72,10 @@ public class Poukimone {
     }
 
     public void use_ability (Ability attack){
-			exp++;
+		exp++;
     }
 
-	private void get_base(String name, String field){
+	private void get_base(String name){
 		ObjectMapper mapper = new OjectMapper();
 
 		JsonNode rootArr = mapper.readTree(new File("./poukimone.json"));
@@ -131,3 +107,4 @@ public class Poukimone {
 			return false;
 	}
 }
+
