@@ -1,0 +1,28 @@
+[
+  {
+    "name"  : "pikachu",
+    "att"   : "55",
+    "def"   : "30",
+    "spd"   : "90",
+    "exp"   : "82",
+    "hp"    : "35",
+    "type"  : "ELECTRIQUE"
+  },
+  {
+    "name"  : "pachirisu",
+    "att"   : "45",
+    "def"   : "70",
+    "spd"   : "95",
+    "exp"   : "120",
+    "hp"    : "60",
+    "type": "ELECTRIQUE"
+  },
+  {
+    "name": "filsdepute",
+    "att": "00",
+    "def": "5555555",
+    "spd": "0",
+    "exp": "42",
+    "type": "POISON"
+  }
+]

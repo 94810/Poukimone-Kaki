@@ -1,32 +1,30 @@
 /*
 				==TODO==
-
 */
+
 public class Poukimone {
     public String name;
-    public int hp;
-	public // Type enum
-    public int max_hp;// Besoin de le garder car il ya des objets de soin!
-    public int att;
-    public int def;
-    public int spd;
-    public int lvl;
+	public String type;
+
+	public Stats base;
+	public Stats current;
+
     public int next_level_exp;
-    public int exp_value; //Combien il rapporte en exp quand il est vaincu. faudrait peut-être envoyer un mail a Anu pour avoir des précisions sur comment la gérer?
-    private int exp;
-    private int exp_curve;//1 rapide,2 moyenne, 3 parabolique, 4 lente.
+    private int exp_curve;
+
     public Ability[] abilites;
+
 
 	/* Methodes*/
     private void level_up(){
-    	lvl++;
-    	max_hp=get_base(name, "hp")*(1/50)+max_hp;
-    	hp=get_base(name,"hp")*(1/50)+hp;
+    	/*current.lvl++;
+    	current.max_hp=get_base(name, "hp")*(1/50)+max_hp;
+    	current.hp=get_base(name,"hp")*(1/50)+hp;
     	att=get_base(name, "att")*(1/50)+att;
     	def=get_base(name, "def")*(1/50)+def;
     	spd=get_base(name, "spd")*(1/50)+spd;
     	exp=0;
-    	next_level_exp=calc_exp();
+    	next_level_exp=calc_exp();*/
     }
 
     public int calc_exp(){
@@ -58,17 +56,13 @@ public class Poukimone {
 		}else{
     		next_level_exp=calc_exp();
     	}
-    	max_hp=get_base(name, "hp");
-    	hp=get_base(name,"hp");
-    	att=get_base(name, "att");
-    	def=get_base(name, "def");
-    	spd=get_base(name, "spd");
-    	exp_value=get_base(name,"value");
+
+		get_base(spices);
     }
-    public void take_damage (int foe_power, int foe_att){
+    public void take_damage (int foe_power, int foe_att, Type ow_type, Type boum_type){
     	int dmg=0;
-    	dmg=(int)((((lvl*0.4)+2)*foe_att*foe_power)/(def*50))+2;
-    	if (dmg > 0) {// pas sûr que ça soit très utile...
+    	dmg=(int)(((((lvl*0.4)+2)*foe_att*foe_power)/(def*50))+2)*Type.compare(boum_type,ow_type);
+    	if (dmg > 0) {
 			hp = hp - dmg;
 			if (hp < 1) {
 				kill();
@@ -78,12 +72,28 @@ public class Poukimone {
     }
 
     public void use_ability (Ability attack){
-			exp++;
+		exp++;
     }
 
-	private int get_base(String name, String field){
-		int fake_var=12;
-		return fake_var;
+	private void get_base(String name){
+		ObjectMapper mapper = new OjectMapper();
+
+		JsonNode rootArr = mapper.readTree(new File("./poukimone.json"));
+
+		boolean trig=false;
+
+		for(JsonNode root : rootArr) {
+			if(name.equals(root.path("name").asText())){
+				trig=true;
+				base.lvl = 1;
+				base.att = root.path("att").asInt();
+				base.def = root.path("def").asInt();
+				base.spd = root.path("spd").asInt();
+				base.xp = root.path("exp").asInt();
+				type = root.path("type").asInt();
+			}
+		}
+
 	}
 
 	private void kill(){
@@ -97,3 +107,4 @@ public class Poukimone {
 			return false;
 	}
 }
+
