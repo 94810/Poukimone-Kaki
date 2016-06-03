@@ -2,6 +2,17 @@
 				==TODO==
 */
 
+//Include pour parser Json
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+//Fin include pour parseur Json
+
+
 public class Poukimone {
     public String name;
 	public String type;
@@ -17,19 +28,19 @@ public class Poukimone {
 
 	/* Methodes*/
     private void level_up(){
-    	/*current.lvl++;
-    	current.max_hp=get_base(name, "hp")*(1/50)+max_hp;
-    	current.hp=get_base(name,"hp")*(1/50)+hp;
-    	att=get_base(name, "att")*(1/50)+att;
-    	def=get_base(name, "def")*(1/50)+def;
-    	spd=get_base(name, "spd")*(1/50)+spd;
-    	exp=0;
-    	next_level_exp=calc_exp();*/
+    	current.lvl++;
+    	current.max_hp=base.hp*(1/50)+current.hp;
+    	current.hp=base.hp*(1/50)+current.hp;
+    	current.att=base.att*(1/50)+current.att;
+    	current.def=base.def*(1/50)+current.def;
+    	current.spd=base.spd*(1/50)+current.spd;
+    	current.xp=0;
+    	next_level_exp=calc_exp();
     }
 
     public int calc_exp(){
     	int res=0;
-		int k=lvl++;
+		int k=current.lvl++;
     	switch (exp_curve){
     		case 1:
     			res=(int)(0.8*(k*k*k));
@@ -48,23 +59,26 @@ public class Poukimone {
     }
     public Poukimone(String spices){
     	//TODO: verfier que le pokémon est valide!!
-    	name=spices;
-    	lvl=1;
-    	exp_curve=get_base(name, "curve");
+
+		base = new Stats();
+		current = new Stats();
+
+		name=spices;
+		this.get_base();
+		current.lvl=1;
+
     	if (exp_curve==3) {
 			next_level_exp = 63;//voir "Bug de l'expérience" sur Pokémon G1 et 2
 		}else{
     		next_level_exp=calc_exp();
     	}
-
-		get_base(spices);
-    }
+	}
     public void take_damage (int foe_power, int foe_att, Type ow_type, Type boum_type){
     	int dmg=0;
-    	dmg=(int)(((((lvl*0.4)+2)*foe_att*foe_power)/(def*50))+2)*Type.compare(boum_type,ow_type);
+    	dmg=(int)((((((current.lvl*0.4)+2)*foe_att*foe_power)/(current.def*50))+2)*Type.compare(boum_type,ow_type));
     	if (dmg > 0) {
-			hp = hp - dmg;
-			if (hp < 1) {
+			current.hp = current.hp - dmg;
+			if (current.hp < 1) {
 				kill();
 			}
 		}else
@@ -72,39 +86,52 @@ public class Poukimone {
     }
 
     public void use_ability (Ability attack){
-		exp++;
+		current.xp++;
     }
 
-	private void get_base(String name){
-		ObjectMapper mapper = new OjectMapper();
+	private void get_base(){
+		JSONParser parser = new JSONParser();
+		try{
+		Object obj = parser.parse(new FileReader("./poukimone.json"));
 
-		JsonNode rootArr = mapper.readTree(new File("./poukimone.json"));
+		JSONArray pkm = (JSONArray) obj;
 
 		boolean trig=false;
 
-		for(JsonNode root : rootArr) {
-			if(name.equals(root.path("name").asText())){
-				trig=true;
+		for(Object objd : pkm) {
+			JSONObject root = (JSONObject) objd;
+			if(name.equals((String) root.get("name"))){
+				trig = true;
 				base.lvl = 1;
-				base.att = root.path("att").asInt();
-				base.def = root.path("def").asInt();
-				base.spd = root.path("spd").asInt();
-				base.xp = root.path("exp").asInt();
-				type = root.path("type").asInt();
+				base.att = Integer.parseInt((String) root.get("att"));
+				base.def = Integer.parseInt((String) root.get("def"));
+				base.spd = Integer.parseInt((String) root.get("spd"));
+				base.xp = Integer.parseInt((String) root.get("xp"));
+				type = (String) (String) root.get("type");
+				exp_curve = Integer.parseInt((String) root.get("curve"));
 			}
+		}
+
+		} catch (FileNotFoundException e) {
+		e.printStackTrace();
+		} catch (IOException e) {
+		e.printStackTrace();
+		} catch (ParseException e) {
+		e.printStackTrace();
 		}
 
 	}
 
 	private void kill(){
-
+		current.hp=0;
 	}
 
 	public boolean is_dead(){
-		if(hp==0)
+		if(current.hp==0)
 			return true;
 		else
 			return false;
 	}
+
 }
 

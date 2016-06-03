@@ -4,25 +4,28 @@
     "att"   : "55",
     "def"   : "30",
     "spd"   : "90",
-    "exp"   : "82",
+    "xp"   : "82",
     "hp"    : "35",
-    "type"  : "ELECTRIQUE"
+    "type"  : "ELECTRIQUE",
+    "curve" : "1"
   },
   {
     "name"  : "pachirisu",
     "att"   : "45",
     "def"   : "70",
     "spd"   : "95",
-    "exp"   : "120",
+    "xp"   : "120",
     "hp"    : "60",
-    "type": "ELECTRIQUE"
+    "type": "ELECTRIQUE",
+    "curve" : "1"
   },
   {
     "name": "filsdepute",
     "att": "00",
     "def": "5555555",
     "spd": "0",
-    "exp": "42",
-    "type": "POISON"
+    "xp": "42",
+    "type": "POISON",
+    "curve" : 1
   }
 ]

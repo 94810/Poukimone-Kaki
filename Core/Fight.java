@@ -37,12 +37,6 @@ public class Fight{
 
     }
 
-
-
-
-
-
-
     }
 }
 
