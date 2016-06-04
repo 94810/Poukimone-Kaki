@@ -15,7 +15,7 @@ import org.json.simple.parser.ParseException;
 
 public class Poukimone {
     public String name;
-	public String type;
+	public Type type;
 
 	public Stats base;
 	public Stats current;
@@ -72,6 +72,8 @@ public class Poukimone {
 		}else{
     		next_level_exp=calc_exp();
     	}
+
+		abilites = new Ability[4]; //TODO Need choose UI for Ability
 	}
     public void take_damage (int foe_power, int foe_att, Type ow_type, Type boum_type){
     	int dmg=0;
@@ -107,7 +109,7 @@ public class Poukimone {
 				base.def = Integer.parseInt((String) root.get("def"));
 				base.spd = Integer.parseInt((String) root.get("spd"));
 				base.xp = Integer.parseInt((String) root.get("xp"));
-				type = (String) (String) root.get("type");
+				type = (Type) root.get("type");
 				exp_curve = Integer.parseInt((String) root.get("curve"));
 			}
 		}

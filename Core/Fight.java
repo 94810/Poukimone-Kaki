@@ -1,42 +1,58 @@
 public class Fight{
     public Trainer[] trainers;
-    public Poukimone[] fighters;
+    private int[] selectPkm;
     public trainer winner;
     public trainer loser;
 
   //deroulement du combat
     //
+    public Fight(Trainer t1, Trainer t2){
+        trainers = new Trainer[2];
+        trainers[0] = t1;
+        trainers[1] = t2;
 
+        selectPkm = new int[2]{1,1};
 
-    public rest_of_poukimone_T1(){
-        for (int i=0, i<=Trainer[1].poukimoune[].length,i++){
-            if(poukimoune.is_dead=True)
-               return poukimone[]--;}
-        }
-
-    public rest_of_poukimone_T2(){
-        for (int i=0, i<=Trainer[2].poukimoune[].length,i++){
-            if(poukimoune.is_dead=True)
-               return poukimone[]--;}
+        this.turn(1); //Start with player 1
     }
 
-    public winner(){
+    private void turn(int t){
 
-        if (rest_of_poukimone_T2==0){
+        /*
+                trainers[t].poukimone[selctPkm[t]]; //base pour les tours
+
+                TODO
+                Tour d'un joueur
+        */
+
+        if (!this.winner) //We go until we have a winner
+            this.turn((t + 1) % 2);
+    }
+
+    public int rest_of_poukimone(int t){
+        for (int i=0, i<=Trainer[t].poukimoune.length,i++){
+            if(poukimoune[i].is_dead==false)
+               return 1;
+        }
+    }
+
+
+    public boolean winner(){
+
+        if (rest_of_poukimone(2)==0){
             winner=trainner[1];
             loser=trainner[2];
-                                    }
-
-        if (rest_of_poukimone_T1==0){
-            winner=trainner[2];
-            loser=trainner[1];
-
+            return true;
         }
 
+        if (rest_of_poukimone(1)==0){
+            winner=trainner[2];
+            loser=trainner[1];
+            return true;
+        }
 
-
+        return false;
     }
 
-    }
 }
 

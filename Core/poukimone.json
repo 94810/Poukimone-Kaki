@@ -26,6 +26,6 @@
     "spd": "0",
     "xp": "42",
     "type": "POISON",
-    "curve" : 1
+    "curve" : "1"
   }
 ]
