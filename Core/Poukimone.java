@@ -85,7 +85,7 @@ public class Poukimone {
 	}
     public void take_damage (Poukimone atk, int AbilityNb){
     	int dmg=0;
-    	dmg=(int)((((((current.lvl*0.4)+2)*atk.current.att*atk.abilites[AbilityNb].use())/(current.def*50))+2)*Type.compare(atk.type,type));
+    	dmg=(int)((((((current.lvl*0.4)+2)*atk.current.att*atk.use_ability(AbilityNb))/(current.def*50))+2)*Type.compare(atk.type,type));
     	if (dmg > 0) {
 			current.hp = current.hp - dmg;
 			if (current.hp < 1) {
@@ -95,8 +95,8 @@ public class Poukimone {
 			System.out.print("Miss !");
     }
 
-    public void use_ability (Ability attack){
-		current.xp++;
+    public int use_ability (int AbIndex){
+		return abilites[AbIndex].use();
     }
 
 	private void get_base(){
