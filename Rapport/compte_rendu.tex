@@ -22,8 +22,37 @@
 
 \maketitle
 
+\section*{Question 1}
 
+Nous avons décidé de découper notre projet en les classes suivantes:
+\subsection*{Stats}
+Cette classe contient les stats du Poukimone.Chaque Poukimone est est associé a deux instances de cette classe, l'une contenant les Statistiques de base du poukimone (au niveau 1), l'autre contenant celles actuelles (calculées a partir de celles de base).
+\subsection*{Poukimone}
+Cette classe sert a stocker les caractétistiques permanantes du Poukimone, qui ne changeront jamais au cours du temps.\\ 
+Elle contient notemment:
+\begin{itemize}
+    \item{Le nom du Poukimone}\\
+    \item{La courbe d'experience du Poukimone}\\
+    \item{Le type du Poukimone}\\
+    \item{Le nombre de points d'experience requis pour passer au niveau suivant}\\
+    \item{Ses statistiques, stockées via la classe ci-dessus}\\
+    \item{Ses Capacités}
+\end{itemize}
+\subsection*{Ability}
+Cette classe sert a gérer les capacités des Poukimones.Elle gère la puissance, la précision,le type, et le nombre de pp de la capcité.
+\subsection*{Bag}
+Cette classe gère l'inventaire du joueur.Elle gère les potions et les huiles.
+\subsection*{Type}
+Cette classe gère les types de Poukimone et des Capacités.
+\subsection*{Trainer}
+Cette classe contient le nom du dresseur, son inventaire, ainsi que son équipe de poukimone.
+\subsection*{Fight}
+Cette classe sert a gérer le combat.
 
-
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=75mm]{cover.jpg}
+    \caption{"Schéma de classe du projet"}
+\end{figure}
 
 \end{document}
