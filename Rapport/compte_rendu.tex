@@ -47,12 +47,25 @@ Cette classe gère les types de Poukimone et des Capacités.
 \subsection*{Trainer}
 Cette classe contient le nom du dresseur, son inventaire, ainsi que son équipe de poukimone.
 \subsection*{Fight}
-Cette classe sert a gérer le combat.
+Cette classe sert a gérer le combat.\\
 
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=75mm]{cover.jpg}
     \caption{"Schéma de classe du projet"}
 \end{figure}
+\section*{Question 2}
+Notre Pokémon possède de nombreux attributs, la plupart sont stockés dans deux instanses de la classe Stats. Une de ses instances contient les stats de base du Poukimone. L'autre contient ses attributs calculés au niveau actuel.
+\\Cette classe stats contient les attributs suivants:
+\begin{itemize}
+    \item{Pv max, attaque, defense, vitesse}
+    \item{Niveau}
+    \item{Points d'expérience accumulés, Ou, pour l'instance associée au stats de base, la base de points d'experience rapportée lorsque ce Poukimone est vaincu.}
+    \item{Pv actuels}
+\end{itemize}
+D'autres attributs sont contenus en dehors de cette classe, comme le type de courbe d'xp, l'experience requise pour passer au niveau suivant, le nom du Poukimone, son type, ainsi que ses 4 capacités.
+\\ Toutes ces statistiques sont obtenues a partir d'un fichier json contenant les stats de base de tous les Pokémons de la G1
+\section*{Question 3}
+
 
 \end{document}
