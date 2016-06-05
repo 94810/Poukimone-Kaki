@@ -1,6 +1,6 @@
 public class Trainer{
     private String name;
-    private Poukimone team[];
+    public Poukimone team[];
     public Bag inventaire;
 
     public Trainer (String n, String starter, int starter_levl, int potions, int oils){ //On a forcement 1 pkm et 1nm
