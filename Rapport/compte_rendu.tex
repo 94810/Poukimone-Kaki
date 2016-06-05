@@ -58,6 +58,39 @@ Notre Pokémon possède de nombreux attributs, la plupart sont stockés dans deu
 D'autres attributs sont contenus en dehors de cette classe, comme le type de courbe d'xp, l'experience requise pour passer au niveau suivant, le nom du Poukimone, son type, ainsi que ses 4 capacités.
 \\ Toutes ces statistiques sont obtenues a partir d'un fichier json contenant les stats de base de tous les Pokémons de la G1
 \section*{Question 3}
+\subsection*{Méthodes liées aux caractéristiques}
+
+\begin{itemize}
+    \item{get\_base:}
+        Cette méthode sert a récupérer toutes les statistiques de base d'un Poukimone donné. Etant relativement lente, nous essayons d'y faire le moins appel possible.\\
+    \item{calc\_exp:}
+        A partir du niveau du Poukimone, ainsi que de la nature de sa courbe d'experience, cette méthode met a jour le nombre de points d'experience requis pour passer au niveau suivant.\\
+    \item{level\_up:}
+        Fait passer le Poukimone au niveau supérieur, en mettant a jour ses stats ainsi que la valeur d'xp requise pour passer au niveau suivant.\\
+    \item{set\_level:}
+        Met un Poukimone au niveau donné par appel successifs de level\_up.
+\end{itemize}
+\subsection*{Méthodes liées au combat}
+\begin{itemize}
+    \item{take\_damage:}
+        Cette méthode gère les dégats pris par le Poukimone. Elle prend en entrée les Poukimone ennmi, et la puissance de l'attaque, et déduit les dégats de la vie du Poukimone.\\
+    \item{use\_ability:}
+        Cette méthode lui sert a attaquer,via la classe Ability.\\
+    \item{kill:}
+        Tue instentanément le Poukimone.\\
+    \item{is\_dead:}
+        retourne vrai si le Poukimone n'as plus de vie.
+\end{itemize}
+\subsection*{Autres méthodes}
+\begin{itemize}
+    \item{Constructeur:}
+        Crée un Poukimoke de type et de niveau donné.\\
+    \item{add\_ability:}
+        Ajoute une capacitée donnée au Poukimone.\\
+    \item{list\_abilites:}
+        Liste les capacitées du Poukimone.
+\end{itemize}
+
 
 \chapter*{Le texte que j'ai déja écrit qui peut servir plus tard... (ça sert de lire les questions avant d'y répondre... :/}
 \subsection*{Ability}
