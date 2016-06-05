@@ -16,7 +16,7 @@ public class Fight{
         this.turn(1); //Start with player 1
     }
 
-    private void turn(int t){
+    private void turn(int t, int abili/* need other arg from Display class*/){
 
         /*
                 trainers[t].poukimone[selctPkm[t]]; //base pour les tours
@@ -24,6 +24,8 @@ public class Fight{
                 TODO
                 Tour d'un joueur
         */
+
+        trainers[t].poukimone[selectPkm[t]].take_damage(trainers[(t + 1) % 2].poukimone[selectPkm[(t + 1) % 2]], abili)
 
         if (!this.winner) //We go until we have a winner
             this.turn((t + 1) % 2);

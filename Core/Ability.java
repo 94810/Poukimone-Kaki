@@ -1,10 +1,22 @@
+import java.util.Random;
+
 public class Ability{
     public String name;
     private int max_pp;//pareil pour les pp
     private int power;
-    public int pp;
+    private int pp;
+    private double pre;
 
-    public Ability(String name, int max_pp, int power){
+    public Ability(String name, int max_pp, int power, double pre){
 
+    }
+
+    public int use(){
+        Random rand = new Random();
+        pp--;
+        if(rand.nextDouble()<pre)
+            return power;
+        else
+            return 0;
     }
 }

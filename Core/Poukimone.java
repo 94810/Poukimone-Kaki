@@ -38,8 +38,8 @@ public class Poukimone {
     	next_level_exp=calc_exp();
     }
 	private void set_level(int level){
-		if (lvl<level){
-			while (lvl!=level){
+		if (current.lvl<level){
+			while (current.lvl!=level){
 				level_up();
 			}
 		}
@@ -83,9 +83,9 @@ public class Poukimone {
 		abilites = new Ability[4]; //TODO Need choose UI for Ability
 		set_level(level);
 	}
-    public void take_damage (int foe_power, int foe_att, Type ow_type, Type boum_type){
+    public void take_damage (Poukimone atk, int AbilityNb){
     	int dmg=0;
-    	dmg=(int)((((((current.lvl*0.4)+2)*foe_att*foe_power)/(current.def*50))+2)*Type.compare(boum_type,ow_type));
+    	dmg=(int)((((((current.lvl*0.4)+2)*atk.current.att*atk.use_ability(AbilityNb))/(current.def*50))+2)*Type.compare(atk.type,type));
     	if (dmg > 0) {
 			current.hp = current.hp - dmg;
 			if (current.hp < 1) {
@@ -95,8 +95,8 @@ public class Poukimone {
 			System.out.print("Miss !");
     }
 
-    public void use_ability (Ability attack){
-		current.xp++;
+    public int use_ability (int AbIndex){
+		return abilites[AbIndex].use();
     }
 
 	private void get_base(){
