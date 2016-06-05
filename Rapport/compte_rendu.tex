@@ -23,8 +23,8 @@
 \maketitle
 
 \chapter*{Avant-Propos}
-Toute ressemblance avec des jeux, systèmes et créatures imaginaires ayant existé est PUREMENT fortuite, et ne peux être considéré comme plagiat de la part des auteurs.\\
-Poukimone est une marque déposée par Sean Juy Gayous et CRLYPS Ltd, Hong Kong, Tout droits réservés, des poursuites par cours de conception pourront être entreprises.
+Toute ressemblance avec des jeux, systèmes et créatures imaginaires ayant existé est PUREMENT fortuite, et ne peut être considérée comme plagiat de la part des auteurs.\\
+Poukimone est une marque déposée par Sean Juy Gayous et CRLYPS Ltd, Hong Kong. Tout droits réservés, des poursuites par cours de conception pourront être entreprises.
  
 \newpage
 \section*{Question 1}
@@ -33,7 +33,7 @@ Nos Poukimone reposent sur 2 classes.
 \subsection*{Stats}
 Cette classe contient les stats du Poukimone.Chaque Poukimone est est associé a deux instances de cette classe, l'une contenant les Statistiques de base du poukimone (au niveau 1), l'autre contenant celles actuelles (calculées a partir de celles de base).
 \subsection*{Poukimone}
-Cette classe sert a stocker les caractétistiques permanantes du Poukimone, qui ne changeront jamais au cours du temps.\\ 
+Cette classe sert a stocker les caractéristiques permanantes du Poukimone, qui ne changeront jamais au cours du temps.\\ 
 Elle contient notemment:\\
 \begin{itemize}
     \item{Le nom du Poukimone}
@@ -61,7 +61,7 @@ Notre Pokémon possède de nombreux attributs, la plupart sont stockés dans deu
     \item{Pv actuels}
 \end{itemize}
 D'autres attributs sont contenus en dehors de cette classe, comme le type de courbe d'xp, l'experience requise pour passer au niveau suivant, le nom du Poukimone, son type, ainsi que ses 4 capacités.
-\\ Toutes ces statistiques sont obtenues a partir d'un fichier json contenant les stats de base de tous les Pokémons de la G1
+\\ La plupart de ces statistiques sont obtenues a partir d'un fichier json contenant les stats de base de tous les Pokémons de la G1
 \section*{Question 3}
 \subsection*{Méthodes liées aux caractéristiques}
 
@@ -78,13 +78,13 @@ D'autres attributs sont contenus en dehors de cette classe, comme le type de cou
 \subsection*{Méthodes liées au combat}
 \begin{itemize}
     \item{take\_damage:}
-        Cette méthode gère les dégats pris par le Poukimone. Elle prend en entrée les Poukimone ennmi, et la puissance de l'attaque, et déduit les dégats de la vie du Poukimone.\\
+        Cette méthode gère les dégats pris par le Poukimone. Elle prend en entrée le Poukimone ennemi, et la puissance de l'attaque, et déduit les dégats de la vie du Poukimone.\\
     \item{use\_ability:}
         Cette méthode lui sert a attaquer,via la classe Ability.\\
     \item{kill:}
         Tue instentanément le Poukimone.\\
     \item{is\_dead:}
-        retourne vrai si le Poukimone n'as plus de vie.
+        retourne vrai si le Poukimone n'a plus de vie.
 \end{itemize}
 \subsection*{Autres méthodes}
 \begin{itemize}
@@ -107,6 +107,13 @@ D'autres attributs sont contenus en dehors de cette classe, comme le type de cou
 Notre programme contient une classe Fight, dont le constructeur appelle le premier tour, en fonction de la vitesse des poukimone. La classe apelle enuite le tour du joueur advers, et ainsi de suite... jusqu'a la mort d'un des deux Poukimone.
 
 \section*{Question 7}
-Nous avons déja prévu une classe trainer, qui contient un tableau de Poukimone, nous pouvons donc stocker jusqu'a 6 Poukimone ici.
+Nous avons déja prévu une classe Trainer, qui contient un tableau de Poukimone, nous pouvons donc stocker jusqu'a 6 Poukimone ici.
+\newpage
+\section*{Sources}
+\begin{itemize}
+    \item{http://www.pokepedia.fr/index.php/Exp\%C3\%A9rience}\\
+    \item{http://www.pokepedia.fr/Courbe\_d'exp\%C3\%A9rience}\\
+    \item{http://www.pokepedia.fr/Statistique\#D.C3.A9termination\_des\_statistiques}
+\end{itemize}
 
 \end{document}
