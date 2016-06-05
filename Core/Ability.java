@@ -5,5 +5,6 @@ public class Ability{
     public int pp;
 
     public Ability(String name, int max_pp, int power){
+
     }
 }

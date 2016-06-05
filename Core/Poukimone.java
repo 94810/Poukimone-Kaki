@@ -37,7 +37,7 @@ public class Poukimone {
     	current.xp=0;
     	next_level_exp=calc_exp();
     }
-	private set_level(int level){
+	private void set_level(int level){
 		if (lvl<level){
 			while (lvl!=level){
 				level_up();
