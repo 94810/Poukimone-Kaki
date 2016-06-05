@@ -1,6 +1,6 @@
 [
   {
-    "name"  : "pakachu",
+    "name"  : "Pakachu",
     "att"   : "55",
     "def"   : "30",
     "spd"   : "90",
@@ -10,7 +10,7 @@
     "curve" : "1"
   },
   {
-    "name"  : "puchirisi",
+    "name"  : "Puchirisi",
     "att"   : "45",
     "def"   : "70",
     "spd"   : "95",
@@ -20,7 +20,7 @@
     "curve" : "1"
   },
   {
-    "name"  : "silimeche",
+    "name"  : "Silimeche",
     "att"   : "52",
     "def"   : "43",
     "spd"   : "65",
@@ -30,7 +30,7 @@
     "curve" : "2"
   },
   {
-    "name"  : "balbizir",
+    "name"  : "Balbizir",
     "att"   : "49",
     "def"   : "49",
     "spd"   : "45",
@@ -66,12 +66,102 @@
     "spd"   : "105",
     "xp"   : "120",
     "hp"    : "180",
+    "type": "COMBAT",
+    "curve" : "1"
+  },
+  {
+    "name"  : "Paboula",
+    "att"   : "180",
+    "def"   : "140",
+    "spd"   : "121",
+    "xp"   : "130",
+    "hp"    : "200",
+    "type": "SOL",
+    "curve" : "1"
+  },
+  {
+    "name"  : "Quillome",
+    "att"   : "101",
+    "def"   : "200",
+    "spd"   : "103",
+    "xp"   : "80",
+    "hp"    : "100",
+    "type": "POISON",
+    "curve" : "3"
+  },
+  {
+    "name"  : "Leviatir",
+    "att"   : "125",
+    "def"   : "79",
+    "spd"   : "81",
+    "xp"   : "214",
+    "hp"    : "95",
+    "type": "EAU",
+    "curve" : "1"
+  },
+  {
+    "name"  : "Miou",
+    "att"   : "100",
+    "def"   : "100",
+    "spd"   : "100",
+    "xp"   : "64",
+    "hp"    : "100",
+    "type": "PSY",
+    "curve" : "1"
+  },
+  {
+    "name"  : "Magitruite",
+    "att"   : "10",
+    "def"   : "55",
+    "spd"   : "80",
+    "xp"   : "64",
+    "hp"    : "20",
+    "type": "EAU",
+    "curve" : "1"
+  },
+  {
+    "name"  : "Papilision",
+    "att"   : "45",
+    "def"   : "50",
+    "spd"   : "70",
+    "xp"   : "160",
+    "hp"    : "60",
+    "type": "VOL",
+    "curve" : "1"
+  },
+  {
+    "name"  : "Epilygon",
+    "att"   : "60",
+    "def"   : "70",
+    "spd"   : "40",
+    "xp"   : "130",
+    "hp"    : "65",
     "type": "NORMAL",
     "curve" : "1"
   },
   {
+    "name"  : "Ivolipa",
+    "att"   : "55",
+    "def"   : "50",
+    "spd"   : "55",
+    "xp"   : "92",
+    "hp"    : "60",
+    "type": "NORMAL",
+    "curve" : "1"
+  },
+  {
+    "name"  : "Cthulhruel",
+    "att"   : "70",
+    "def"   : "65",
+    "spd"   : "100",
+    "xp"   : "205",
+    "hp"    : "80",
+    "type": "EAU",
+    "curve" : "2"
+  },
+  {
     "name": "fycedheuput",
-    "att": "00",
+    "att": "0",
     "def": "5555555",
     "spd": "0",
     "xp": "42",
