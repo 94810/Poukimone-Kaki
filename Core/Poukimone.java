@@ -89,7 +89,7 @@ public class Poukimone {
 		set_level(level);
 	}
 
-	public void take_damage(Poukimone atk, int AbilityNb) {
+	public int take_damage(Poukimone atk, int AbilityNb) {
 		int dmg = 0;
 		dmg = (int) ((((((current.lvl * 0.4) + 2) * atk.current.att * atk.use_ability(AbilityNb)) / (current.def * 50)) + 2) * Type.compare(atk.abilites[AbilityNb].getType(), type));
 		if (dmg > 0) {
@@ -99,6 +99,8 @@ public class Poukimone {
 			}
 		} else
 			System.out.print("Miss !");
+
+		return dmg;
 	}
 
 	public int use_ability(int AbIndex) {
@@ -120,10 +122,12 @@ public class Poukimone {
 					trig = true;
 					base.lvl = 1;
 					base.att = Integer.parseInt((String) root.get("att"));
+					base.hp  = Integer.parseInt((String) root.get("hp"));
 					base.def = Integer.parseInt((String) root.get("def"));
 					base.spd = Integer.parseInt((String) root.get("spd"));
 					base.xp = Integer.parseInt((String) root.get("xp"));
-					type = (Type) root.get("type");
+					//type = root.get("type");
+					type = Type.NORMAL;
 					exp_curve = Integer.parseInt((String) root.get("curve"));
 				}
 			}
@@ -154,11 +158,11 @@ public class Poukimone {
 	}
 
 	public void add_ability(String name, int power, int pp, double pre, Type type, int place) {
-		if (abilites[place].name == null) {
+		//if (abilites[place].name == null) {
 			abilites[place] = new Ability(name, pp, power, pre, type);
-		} else {
+		//} else {
 			//TODO Message remplacement de cappa.
-		}
+		//}
 
 	}
 }

@@ -13,8 +13,12 @@ public class Ability{
         return type;
     }
 
-    public Ability(String name, int max_pp, int power, double pre, Type type){
+    public Ability(String nam, int max_pp, int pow, double pr, Type typ){
+        name=nam;
         pp=max_pp;
+        power=pow;
+        pre=pr;
+        type=typ;
     }
 
     public int use(){

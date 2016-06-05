@@ -18,12 +18,12 @@ public class Fight{
 
     }
 
-    private void turn(int t, int abili){
-        trainers[t].team[selectPkm[t]].take_damage(trainers[(t + 1) % 2].team[selectPkm[(t + 1) % 2]], abili);
+    public int turn(int t, int abili){
+        return trainers[t].team[selectPkm[t]].take_damage(trainers[(t + 1) % 2].team[selectPkm[(t + 1) % 2]], abili);
     }
 
     public void setSelectPkm(int i, int pkm){
-
+        selectPkm[i]=pkm;
     }
 
     public int rest_of_poukimone(int t){
