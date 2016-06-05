@@ -13,9 +13,24 @@ public class SecondDisplay extends Canvas{
 
         Toolkit pierre=Toolkit.getDefaultToolkit();
         Image P=pierre.getImage("pierre.png");
-        g.drawImage(P, 600,110,this);
+        g.drawImage(P, 1000,110,this);
 
-      
+
+        Toolkit poki1=Toolkit.getDefaultToolkit();
+        Image P1=sacha.getImage("poki3.png");
+        g.drawImage(P1, 250,160,this);
+
+        Toolkit poki2=Toolkit.getDefaultToolkit();
+        Image P2=sacha.getImage("poki2.png");
+        g.drawImage(P2, 750,200,this);
+
+
+        Toolkit start=Toolkit.getDefaultToolkit();
+        Image st=sacha.getImage("start.png");
+        g.drawImage(st, 300,10,this);
+
+
+
     }
 
 
@@ -27,7 +42,7 @@ public class SecondDisplay extends Canvas{
 
 
 
-        f.setSize(800,600);
+        f.setSize(1200,600);
         f.setVisible(true);
     }
 
