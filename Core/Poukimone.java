@@ -142,6 +142,17 @@ public class Poukimone {
 		else
 			return false;
 	}
+	public void list_abilites(){
+		//Comme je sais pas comment marche l'UI du tout, je laisse vide
+	}
+	public void add_ability(String name,int power, int pp, double pre, Type type, int place){
+	if (abilites[place].name=null){
+		abilites[place]=new Ability(name, pp, pre, pre, type);
+	}
+	else
+	{
+		//TODO Message remplacement de cappa.
+	}
 
 }
 
