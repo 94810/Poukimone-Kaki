@@ -7,6 +7,12 @@ public class Ability{
     private int pp;
     private double pre;
     private Type type;
+
+
+    public Type getType(){
+        return type;
+    }
+
     public Ability(String name, int max_pp, int power, double pre, Type type){
         pp=max_pp;
     }

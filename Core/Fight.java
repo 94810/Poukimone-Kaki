@@ -1,8 +1,9 @@
 public class Fight{
     public Trainer[] trainers;
     private int[] selectPkm;
-    public trainer winner;
-    public trainer loser;
+    public Trainer winner;
+    public Trainer loser;
+
 
   //deroulement du combat
     //
@@ -11,39 +12,41 @@ public class Fight{
         trainers[0] = t1;
         trainers[1] = t2;
 
-        selectPkm = new int[2]{1,1};
-        if (trainers[0].poukimone[0].current.spd>trainers[0].poukimone[0].current.spd)
-            this.turn(0);
-        else
-            this.turn(1);
+        selectPkm = new int[2];
+        selectPkm[0] = 0;
+        selectPkm[1] = 0;
+
     }
 
     private void turn(int t, int abili){
-        trainers[t].poukimone[selectPkm[t]].take_damage(trainers[(t + 1) % 2].poukimone[selectPkm[(t + 1) % 2]], abili)
+        trainers[t].team[selectPkm[t]].take_damage(trainers[(t + 1) % 2].team[selectPkm[(t + 1) % 2]], abili);
+    }
 
-        if (!this.winner) //We go until we have a winner
-            this.turn((t + 1) % 2);
+    public void setSelectPkm(int i, int pkm){
+
     }
 
     public int rest_of_poukimone(int t){
-        for (int i=0, i<=Trainer[t].poukimoune.length,i++){
-            if(poukimoune[i].is_dead==false)
-               return 1;
+        int res = 0;
+        for (int i=0; i<=trainers[t].team.length; i++){
+            if(trainers[t].team[i].is_dead()==false)
+               res = 1;
         }
+        return res;
     }
 
 
     public boolean winner(){
 
         if (rest_of_poukimone(2)==0){
-            winner=trainner[1];
-            loser=trainner[2];
+            winner=trainers[1];
+            loser=trainers[2];
             return true;
         }
 
         if (rest_of_poukimone(1)==0){
-            winner=trainner[2];
-            loser=trainner[1];
+            winner=trainers[2];
+            loser=trainers[1];
             return true;
         }
 
