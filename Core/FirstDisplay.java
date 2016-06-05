@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.awt.event.*;
-
+//Je suis un commentaire
 class FirstDisplay extends JFrame implements ActionListener{
     JRadioButton rb1,rb2;
     JButton b;
