@@ -1,5 +1,21 @@
 import javax.swing.*;
 import java.awt.event.*;
+
+//Include pour parser Json
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+//Fin include pour parseur Json
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+
 //Je suis un commentaire
 class FirstDisplay extends JFrame implements ActionListener{
     JRadioButton rb1,rb2;
@@ -38,8 +54,30 @@ class FirstDisplay extends JFrame implements ActionListener{
         text2= new JTextField("player 2");
         text2.setBounds(220,180,110,35);
 
-        String poukimoune[]={"pika","Butterfree","Blastoise","Wartortle","Venusaur","pidgeot" ,
-                "Pidgey"};
+        //String poukimoune[]={"pika","Butterfree","Blastoise","Wartortle","Venusaur","pidgeot" ,
+        //        "Pidgey"};
+
+        JSONParser parser = new JSONParser();
+        List<String> pkmone = new ArrayList<String>();
+
+		try{
+		    Object obj = parser.parse(new FileReader("./poukimone.json"));
+
+		    JSONArray pkm = (JSONArray) obj;
+
+		    for(Object objd : pkm) {
+                JSONObject root = (JSONObject) objd;
+                pkmone.add((String) root.get("name"));
+            }
+		}catch (FileNotFoundException e) {
+		e.printStackTrace();
+		} catch (IOException e) {
+		e.printStackTrace();
+		} catch (ParseException e) {
+		e.printStackTrace();
+		}
+
+        String poukimoune[] = (String[]) pkmone.toArray(new String[0]);
 
         JComboBox listPlayer1=new JComboBox(poukimoune);
         listPlayer1.setBounds(50,280,110,35);

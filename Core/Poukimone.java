@@ -1,6 +1,3 @@
-/*
-				==TODO==
-*/
 
 //Include pour parser Json
 import java.io.FileNotFoundException;
@@ -69,9 +66,13 @@ public class Poukimone {
 
 		base = new Stats();
 		current = new Stats();
-
 		name=spices;
+
 		this.get_base();
+		try{
+			current = (Stats) base.clone();
+		}catch(CloneNotSupportedException c){};
+
 		current.lvl=1;
 
     	if (exp_curve==3) {

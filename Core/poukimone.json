@@ -20,11 +20,12 @@
     "curve" : "1"
   },
   {
-    "name": "filsdepute",
+    "name": "fycedheuput",
     "att": "00",
     "def": "5555555",
     "spd": "0",
     "xp": "42",
+    "hp": "666",
     "type": "POISON",
     "curve" : "1"
   }

@@ -12,19 +12,13 @@ public class Fight{
         trainers[1] = t2;
 
         selectPkm = new int[2]{1,1};
-
-        this.turn(1); //Start with player 1
+        if (trainers[0].poukimone[0].current.spd>trainers[0].poukimone[0].current.spd)
+            thi.turn(0);
+        else
+            this.turn(1);
     }
 
-    private void turn(int t, int abili/* need other arg from Display class*/){
-
-        /*
-                trainers[t].poukimone[selctPkm[t]]; //base pour les tours
-
-                TODO
-                Tour d'un joueur
-        */
-
+    private void turn(int t, int abili){
         trainers[t].poukimone[selectPkm[t]].take_damage(trainers[(t + 1) % 2].poukimone[selectPkm[(t + 1) % 2]], abili)
 
         if (!this.winner) //We go until we have a winner
