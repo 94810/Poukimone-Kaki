@@ -12,13 +12,11 @@ public class Ability{
     }
 
     public int use(){
-        Random rand;
+        Random rand = new Random();
         pp--;
         if(rand.nextDouble()<pre)
             return power;
         else
             return 0;
     }
-
-    Power
 }
