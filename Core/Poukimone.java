@@ -37,6 +37,13 @@ public class Poukimone {
     	current.xp=0;
     	next_level_exp=calc_exp();
     }
+	private set_level(int level){
+		if (lvl<level){
+			while (lvl!=level){
+				level_up();
+			}
+		}
+	}
 
     public int calc_exp(){
     	int res=0;
@@ -57,7 +64,7 @@ public class Poukimone {
     	}
     	return res;
     }
-    public Poukimone(String spices){
+    public Poukimone(String spices, int level){
     	//TODO: verfier que le pokémon est valide!!
 
 		base = new Stats();
@@ -74,6 +81,7 @@ public class Poukimone {
     	}
 
 		abilites = new Ability[4]; //TODO Need choose UI for Ability
+		set_level(level);
 	}
     public void take_damage (int foe_power, int foe_att, Type ow_type, Type boum_type){
     	int dmg=0;

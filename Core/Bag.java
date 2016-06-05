@@ -34,4 +34,7 @@ public class Bag{
             res=false;
         return res;
     }
+    public Bag(int popo, int mana){
+
+    }
 }

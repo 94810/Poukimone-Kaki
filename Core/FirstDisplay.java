@@ -13,7 +13,7 @@ class FirstDisplay extends JFrame implements ActionListener{
         JLabel label = new JLabel("Chose your mode");
         label.setBounds(20, 20, 150, 20);
 
-        JLabel label1 = new JLabel("Tape player's names");
+        JLabel label1 = new JLabel("Enter player's names");
         label1.setBounds(20, 150, 150, 20);
 
         JLabel label2 = new JLabel("Chose your Pokemon");
