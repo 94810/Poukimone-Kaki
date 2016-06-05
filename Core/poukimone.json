@@ -1,6 +1,6 @@
 [
   {
-    "name"  : "pikachu",
+    "name"  : "pakachu",
     "att"   : "55",
     "def"   : "30",
     "spd"   : "90",
@@ -10,7 +10,7 @@
     "curve" : "1"
   },
   {
-    "name"  : "pachirisu",
+    "name"  : "puchirisi",
     "att"   : "45",
     "def"   : "70",
     "spd"   : "95",
@@ -20,11 +20,62 @@
     "curve" : "1"
   },
   {
-    "name": "filsdepute",
+    "name"  : "silimeche",
+    "att"   : "52",
+    "def"   : "43",
+    "spd"   : "65",
+    "xp"   : "65",
+    "hp"    : "39",
+    "type": "FEU",
+    "curve" : "2"
+  },
+  {
+    "name"  : "balbizir",
+    "att"   : "49",
+    "def"   : "49",
+    "spd"   : "45",
+    "xp"   : "64",
+    "hp"    : "45",
+    "type": "PLANTE",
+    "curve" : "3"
+  },
+  {
+    "name"  : "Aspicat",
+    "att"   : "35",
+    "def"   : "30",
+    "spd"   : "50",
+    "xp"   : "52",
+    "hp"    : "40",
+    "type": "INSECTE",
+    "curve" : "1"
+  },
+  {
+  "name"  : "Rondidi",
+  "att"   : "45",
+  "def"   : "20",
+  "spd"   : "20",
+  "xp"   : "76",
+  "hp"    : "115",
+  "type": "NORMAL",
+  "curve" : "3"
+  },
+  {
+    "name"  : "Dohibaa",
+    "att"   : "191",
+    "def"   : "134",
+    "spd"   : "105",
+    "xp"   : "120",
+    "hp"    : "180",
+    "type": "NORMAL",
+    "curve" : "1"
+  },
+  {
+    "name": "fycedheuput",
     "att": "00",
     "def": "5555555",
     "spd": "0",
     "xp": "42",
+    "hp": "666",
     "type": "POISON",
     "curve" : "1"
   }
