@@ -13,7 +13,7 @@ public class Fight{
 
         selectPkm = new int[2]{1,1};
         if (trainers[0].poukimone[0].current.spd>trainers[0].poukimone[0].current.spd)
-            thi.turn(0);
+            this.turn(0);
         else
             this.turn(1);
     }
