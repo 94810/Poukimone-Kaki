@@ -86,7 +86,7 @@ public class Poukimone {
 	}
     public void take_damage (Poukimone atk, int AbilityNb){
     	int dmg=0;
-    	dmg=(int)((((((current.lvl*0.4)+2)*atk.current.att*atk.use_ability(AbilityNb))/(current.def*50))+2)*Type.compare(atk.type,type));
+    	dmg=(int)((((((current.lvl*0.4)+2)*atk.current.att*atk.use_ability(AbilityNb))/(current.def*50))+2)*Type.compare(atk.abilites[AbilityNb].type,type));
     	if (dmg > 0) {
 			current.hp = current.hp - dmg;
 			if (current.hp < 1) {

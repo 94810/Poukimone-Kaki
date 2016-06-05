@@ -4,6 +4,7 @@ public class Fight{
     public trainer winner;
     public trainer loser;
 
+
   //deroulement du combat
     //
     public Fight(Trainer t1, Trainer t2){
@@ -19,10 +20,15 @@ public class Fight{
     }
 
     private void turn(int t, int abili){
+
         trainers[t].poukimone[selectPkm[t]].take_damage(trainers[(t + 1) % 2].poukimone[selectPkm[(t + 1) % 2]], abili)
 
         if (!this.winner) //We go until we have a winner
             this.turn((t + 1) % 2);
+    }
+
+    public void setSelectPkm(int i, int pkm){
+
     }
 
     public int rest_of_poukimone(int t){
