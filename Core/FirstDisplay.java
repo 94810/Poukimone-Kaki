@@ -56,6 +56,7 @@ class FirstDisplay extends JFrame implements ActionListener{
         setVisible(true);
     }
     public void actionPerformed(ActionEvent e){
+
         if(rb1.isSelected()){
             JOptionPane.showMessageDialog(this,"you chosed mode PVP");
         }
