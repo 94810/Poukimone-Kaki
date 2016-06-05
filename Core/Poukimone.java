@@ -147,7 +147,7 @@ public class Poukimone {
 	}
 	public void add_ability(String name,int power, int pp, double pre, Type type, int place){
 	if (abilites[place].name=null){
-		abilites[place]=new Ability(name, pp, pre, pre, type);
+		abilites[place]=new Ability(name, pp, power, pre, type);
 	}
 	else
 	{
